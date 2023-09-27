@@ -1,91 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <!-- Hadoop HTTP 服务器最大请求数 -->
     <property>
         <name>hadoop.http.server.MaxRequests</name>
         <value>2000</value>
     </property>
+    <!-- Hadoop 安全组缓存过期时间 -->
     <property>
         <name>hadoop.security.groups.cache.secs</name>
         <value>60</value>
     </property>
+    <!-- Hadoop SSL 是否要求客户端证书 -->
     <property>
         <name>hadoop.ssl.require.client.cert</name>
         <value>false</value>
     </property>
+    <!-- HBase 主节点移动过期清理周期 -->
     <property>
         <name>hbase.master.mob.ttl.cleaner.period</name>
         <value>86400</value>
     </property>
+    <!-- Hadoop 代理用户 MapReduce 主机列表 -->
     <property>
         <name>hadoop.proxyuser.mapred.hosts</name>
         <value>*</value>
     </property>
+    <!-- HBase 移动文件压缩批量大小 -->
     <property>
         <name>hbase.mob.file.compaction.batch.size</name>
         <value>100</value>
     </property>
+    <!-- NAS 任务节点列表 -->
     <property>
         <name>fs.nas.task.nodes</name>
         <value></value>
     </property>
+    <!-- CAS 配置服务地址 -->
     <property>
         <name>cas.conf.casServerUrlPrefix.on</name>
         <value>https://34.8.9.165:20027/cas/</value>
     </property>
+    <!-- HBase Kerberos 主体名 -->
     <property>
         <name>hbase.kerberos.principal</name>
         <value>hbase/hadoop.hadoop.com@HADOOP.COM</value>
     </property>
+    <!-- CAS 服务名 -->
     <property>
         <name>cas.conf.serverName.on</name>
         <value>https://34.8.9.166:20026/HBase/HMaster/964</value>
     </property>
+    <!-- Hadoop 安全认证到本地用户映射 -->
     <property>
         <name>hadoop.security.auth_to_local</name>
         <value>RULE:[1:$1]
             RULE:[2:$1]
         </value>
     </property>
+    <!-- HBase 移动文件删除最大次数 -->
     <property>
         <name>hbase.mob.delfile.max.count</name>
         <value>3</value>
     </property>
+    <!-- IPC Ping 间隔时间 -->
     <property>
         <name>ipc.ping.interval</name>
         <value>60000</value>
     </property>
+    <!-- HBase 移动文件缓存大小 -->
     <property>
         <name>hbase.mob.file.cache.size</name>
         <value>1000</value>
     </property>
+    <!-- Hadoop 安全授权 -->
     <property>
         <name>hadoop.security.authorization</name>
         <value>true</value>
     </property>
+    <!-- Hadoop 代理用户 Spark 主机列表 -->
     <property>
         <name>hadoop.proxyuser.spark.hosts</name>
         <value>*</value>
     </property>
+    <!-- Hadoop 代理用户 Loader 主机列表 -->
     <property>
         <name>hadoop.proxyuser.loader.hosts</name>
         <value>*</value>
     </property>
+    <!-- IPC 客户端连接超时时间 -->
     <property>
         <name>ipc.client.connect.timeout</name>
         <value>20000</value>
     </property>
+    <!-- CAS 配置服务地址 -->
     <property>
         <name>cas.conf.casServerUrlPrefix.off</name>
         <value>https://34.8.9.166:20009/cas/</value>
     </property>
+    <!-- Hadoop 代理用户 Spark 用户组列表 -->
     <property>
         <name>hadoop.proxyuser.spark.groups</name>
         <value>*</value>
     </property>
+    <!-- Hadoop 代理用户 Loader 用户组列表 -->
     <property>
         <name>hadoop.proxyuser.loader.groups</name>
         <value>*</value>
     </property>
+    <!-- Hadoop 安全认证方式 -->
     <property>
         <name>hadoop.security.authentication</name>
         <value>kerberos</value>
@@ -95,58 +117,72 @@
         <name>dfs.encrypt.data.transfer.cipher.suites</name>
         <value>AES/CTR/NoPadding</value>
     </property>
+    <!-- MapReduce 作业 HDFS 服务器列表 -->
     <property>
         <name>mapreduce.job.hdfs-servers</name>
         <value>hdfs://hacluster,hdfs://hacluster</value>
     </property>
+    <!-- Hadoop的代理用户Hue的主机 -->
     <property>
         <name>hadoop.proxyuser.hue.hosts</name>
         <value>*</value>
     </property>
+    <!-- Hadoop 默认代理用户的主机 -->
     <property>
         <name>hadoop.proxyuser._default_proxy_user_.hosts</name>
         <value>*</value>
     </property>
+    <!-- Hadoop Spark2x的代理用户组 -->
     <property>
         <name>hadoop.proxyuser.spark2x.groups</name>
         <value>*</value>
     </property>
+    <!-- 内部SPNEGO服务主体 -->
     <property>
         <name>hadoop.http.kerberos.internal.spnego.principal</name>
         <value>hbase/hadoop.hadoop.com@HADOOP.COM</value>
     </property>
+    <!-- Hadoop MapReduce的代理用户组 -->
     <property>
         <name>hadoop.proxyuser.mapred.groups</name>
         <value>*</value>
     </property>
+    <!-- Hadoop Thrift的代理用户主机 -->
     <property>
         <name>hadoop.proxyuser.thrift.hosts</name>
         <value>*</value>
     </property>
+    <!-- 启用UI注销 -->
     <property>
         <name>hadoop.security.logout.ui.enable</name>
         <value>true</value>
     </property>
+    <!-- 加密实现类 -->
     <property>
         <name>hadoop.security.crypto.implementation.class</name>
         <value>com.huawei.hadoop.datasight.security.FMHadoopCryptAdapter</value>
     </property>
+    <!-- Hue的代理用户组 -->
     <property>
         <name>hadoop.proxyuser.hue.groups</name>
         <value>*</value>
     </property>
+    <!-- Hadoop 安全组映射实现类 -->
     <property>
         <name>hadoop.security.group.mapping</name>
         <value>org.apache.hadoop.security.ShellBasedUnixGroupsMapping</value>
     </property>
+    <!-- Hadoop SSL密钥库工厂类 -->
     <property>
         <name>hadoop.ssl.keystores.factory.class</name>
         <value>org.apache.hadoop.security.ssl.FileBasedKeyStoresFactory</value>
     </property>
+    <!--Hadoop Hive的代理用户组 -->
     <property>
         <name>hadoop.proxyuser.hive.groups</name>
         <value>*</value>
     </property>
+    <!-- Hadoop Thrift的代理用户组 -->
     <property>
         <name>hadoop.proxyuser.thrift.groups</name>
         <value>*</value>
@@ -155,162 +191,201 @@
         <name>hadoop.http.authentication.center</name>
         <value>https://34.8.9.166:20009/cas/</value>
     </property>
+    <!-- Miner的代理用户组 -->
     <property>
         <name>hadoop.proxyuser.miner.groups</name>
         <value>*</value>
     </property>
+    <!-- 默认的文件系统 -->
     <property>
         <name>fs.defaultFS</name>
         <value>hdfs://hacluster</value>
     </property>
+    <!-- Miner的代理用户主机 -->
     <property>
         <name>hadoop.proxyuser.miner.hosts</name>
         <value>*</value>
     </property>
+    <!-- MOB文件合并周期 -->
     <property>
         <name>hbase.mob.file.compaction.chore.period</name>
         <value>604800</value>
     </property>
+    <!-- Pollux的代理用户主机 -->
     <property>
         <name>hadoop.proxyuser.pollux.hosts</name>
         <value>*</value>
     </property>
+    <!-- NAS挂载目录 -->
     <property>
         <name>fs.nas.mount.dir</name>
         <value>/mnt/nfsdata0</value>
     </property>
+    <!-- Omm的代理用户组 -->
     <property>
         <name>hadoop.proxyuser.omm.groups</name>
         <value>*</value>
     </property>
+    <!-- 启用的SSL协议 -->
     <property>
         <name>hadoop.ssl.enabled.protocols</name>
         <value>TLSv1.1,TLSv1.2</value>
     </property>
+    <!-- 默认代理用户的组 -->
     <property>
         <name>hadoop.proxyuser._default_proxy_user_.groups</name>
         <value>*</value>
     </property>
+    <!-- Spark2x的代理用户主机 -->
     <property>
         <name>hadoop.proxyuser.spark2x.hosts</name>
         <value>*</value>
     </property>
+    <!-- MOB文件合并最大线程数 -->
     <property>
         <name>hbase.mob.file.compaction.threads.max</name>
         <value>1</value>
     </property>
+    <!-- 排除的密码套件 -->
     <property>
         <name>hadoop.exclude.ciphers.ext</name>
         <value>
             TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA,SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA,SSL_RSA_WITH_3DES_EDE_CBC_SHA,TLS_DHE_RSA_WITH_AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_3DES_EDE_CBC_SHA,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384
         </value>
     </property>
+    <!-- Pollux的代理用户组 -->
     <property>
         <name>hadoop.proxyuser.pollux.groups</name>
         <value>*</value>
     </property>
+    <!-- NAS抽象文件系统 -->
     <property>
         <name>fs.AbstractFileSystem.nas.impl</name>
         <value>com.huawei.nasfilesystem.WushanFs</value>
     </property>
+    <!-- HBase管理员访问控制列表 -->
     <property>
         <name>hbase.admin.acl</name>
         <value>hbase</value>
     </property>
+    <!-- CAS代理开关 -->
     <property>
         <name>cas.proxy.switch</name>
         <value>true</value>
     </property>
+    <!-- 数据传输加密算法 -->
     <property>
         <name>dfs.encrypt.data.transfer.algorithm</name>
         <value>3des</value>
     </property>
+    <!-- 内部SPNEGO服务的关键表 -->
     <property>
         <name>hadoop.http.kerberos.internal.spnego.keytab</name>
         <value>
             /opt/huawei/Bigdata/FusionInsight_HD_V100R002C80SPC200/install/FusionInsight-HBase-1.3.1/keytabs/HBase/hbase.keytab
         </value>
     </property>
+    <!-- SSL主机名验证器 -->
     <property>
         <name>hadoop.ssl.hostname.verifier</name>
         <value>DEFAULT</value>
     </property>
+    <!-- 注销URL -->
     <property>
         <name>hadoop.http.authentication.logout</name>
         <value>https://34.8.9.166:20009/cas/logout</value>
     </property>
+    <!-- MOB缓存驱逐比率 -->
     <property>
         <name>hbase.mob.cache.evict.remain.ratio</name>
         <value>0.5</value>
     </property>
+    <!-- 认证中心监听器 -->
     <property>
         <name>hadoop.http.authentication.center.listener</name>
         <value>org.jasig.cas.client.session.SingleSignOutHttpSessionListener</value>
     </property>
+    <!-- SSL服务器配置 -->
     <property>
         <name>hadoop.ssl.server.conf</name>
         <value>ssl-server.xml</value>
     </property>
+    <!-- 客户端RPC超时时间 -->
     <property>
         <name>ipc.client.rpc.timeout</name>
         <value>300000</value>
     </property>
+    <!-- ViewFS挂载表 -->
     <property>
         <name>fs.viewfs.mounttable.ClusterX.homedir</name>
         <value>/</value>
     </property>
+    <!-- MOB文件可合并阈值 -->
     <property>
         <name>hbase.mob.file.compaction.mergeable.threshold</name>
         <value>201326592</value>
     </property>
+    <!-- Hive的代理用户主机 -->
     <property>
         <name>hadoop.proxyuser.hive.hosts</name>
         <value>*</value>
     </property>
+    <!-- 允许的SPNEGO IP地址 -->
     <property>
         <name>hadoop.spnego.allowed.ips</name>
         <value>.*</value>
     </property>
+    <!-- 安全仪表需要管理员 -->
     <property>
         <name>hadoop.security.instrumentation.requires.admin</name>
         <value>true</value>
     </property>
+    <!-- Omm的代理用户主机 -->
     <property>
         <name>hadoop.proxyuser.omm.hosts</name>
         <value>*</value>
     </property>
+    <!-- CAS服务器登录URL -->
     <property>
         <name>cas.conf.casServerLoginUrl</name>
         <value>https://34.8.9.166:20009/cas/login</value>
     </property>
+    <!-- 数据传输加密 -->
     <property>
         <name>dfs.encrypt.data.transfer</name>
         <value>false</value>
     </property>
+    <!-- 客户端Ping -->
     <property>
         <name>ipc.client.ping</name>
         <value>true</value>
     </property>
+    <!-- MOB缓存驱逐周期 -->
     <property>
         <name>hbase.mob.cache.evict.period</name>
         <value>3600</value>
     </property>
+    <!-- HTTP服务器名称 -->
     <property>
         <name>hadoop.http.server.name</name>
         <value>https://xlhd-b3001-cn02:21301</value>
     </property>
+    <!-- NAS实现类 -->
     <property>
         <name>fs.nas.impl</name>
         <value>com.huawei.nasfilesystem.ShareNASFileSystem</value>
     </property>
+    <!-- ZooKeeper会话超时时间 -->
     <property>
         <name>ha.zookeeper.session-timeout.ms</name>
         <value>45000</value>
     </property>
+    <!-- RPC保护级别 -->
     <property>
         <name>hadoop.rpc.protection</name>
         <value>privacy</value>
     </property>
+    <!-- cas 关闭服务器名称 -->
     <property>
         <name>cas.conf.serverName.off</name>
         <value>https://xlhd-b3001-cn02:21301</value>

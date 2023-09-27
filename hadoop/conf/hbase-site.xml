@@ -1,41 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <!-- Phoenix 每次批量 mutate 操作的大小 -->
     <property>
         <name>phoenix.mutate.batchSize</name>
         <value>5000000</value>
     </property>
+    <!-- Phoenix 执行 mutate 操作时的最大大小 -->
     <property>
         <name>phoenix.mutate.maxSize</name>
         <value>50000000</value>
     </property>
+    <!-- Phoenix 执行 mutate 操作时的最大字节数 -->
     <property>
         <name>phoenix.mutate.maxSizeBytes</name>
         <value>1000000</value>
     </property>
+    <!-- HBase 客户端操作的超时时间 -->
     <property>
         <name>hbase.client.operation.timeout</name>
         <value>6000000</value>
     </property>
+    <!-- HBase 客户端 Scanner 操作的超时时间 -->
     <property>
         <name>hbase.client.scanner.timeout.period</name>
         <value>6000000</value>
     </property>
+    <!-- Phoenix 查询的超时时间 -->
     <property>
         <name>phoenix.query.timeoutMs</name>
         <value>6000000</value>
     </property>
+    <!-- Phoenix 查询的保持连接时间 -->
     <property>
         <name>phoenix.query.keepAliveMs</name>
         <value>6000000</value>
     </property>
+    <!-- Phoenix 查询线程池的大小 -->
     <property>
         <name>phoenix.query.threadPoolSize</name>
         <value>1024</value>
     </property>
+    <!-- Phoenix 查询队列的大小 -->
     <property>
         <name>phoenix.query.queueSize</name>
         <value>1024000</value>
     </property>
+    <!-- Phoenix 统计信息缓存的最大大小 -->
     <property>
         <name>phoenix.stats.cache.maxSize</name>
         <value>536870912</value>
@@ -44,22 +54,27 @@
         <name>phoenix.query.dateFormatTimeZone</name>
         <value>GMT+08:00</value>
     </property>-->
+    <!-- 是否启用 Phoenix 查询的性能指标记录 -->
     <property>
         <name>phoenix.query.metrics.enabled</name>
         <value>true</value>
     </property>
+    <!-- Master 使用的 RMI 客户端 Socket 工厂类 -->
     <property>
         <name>master.rmi.RMIClientSocketFactory.class</name>
         <value>com.huawei.bigdata.om.controller.api.extern.monitor.RmiClientLocalhostSocketFactory</value>
     </property>
+    <!-- HBase 服务器线程的唤醒频率 -->
     <property>
         <name>hbase.server.thread.wakefrequency</name>
         <value>10000</value>
     </property>
+    <!-- HBase Master 是否按表进行负载均衡 -->
     <property>
         <name>hbase.master.loadbalance.bytable</name>
         <value>true</value>
     </property>
+    <!-- HBase Master 关闭 Region 的线程数 -->
     <property>
         <name>hbase.master.executor.closeregion.threads</name>
         <value>10</value>
@@ -69,130 +84,161 @@
         <name>dfs.replication</name>
         <value>3</value>
     </property>
+    <!-- HBase Master 执行服务器操作的线程数 -->
     <property>
         <name>hbase.master.executor.serverops.threads</name>
         <value>5</value>
     </property>
+    <!-- HBase Master 监听端口 -->
     <property>
         <name>hbase.master.port</name>
         <value>21300</value>
     </property>
+    <!-- HBase RegionServer 的 Keytab 文件路径 -->
     <property>
         <name>hbase.regionserver.keytab.file</name>
         <value>
             /opt/huawei/Bigdata/FusionInsight_HD_V100R002C80SPC200/install/FusionInsight-HBase-1.3.1/keytabs/HBase/hbase.keytab
         </value>
     </property>
+    <!-- HBase Master 使用的 IP 列表 -->
     <property>
         <name>hbase.hmaster.ip.lists</name>
         <value>xlhd-b3001-cn02,xlhd-b3002-cn03</value>
     </property>
+    <!-- HBase Master 打开 Region 的线程数 -->
     <property>
         <name>hbase.master.executor.openregion.threads</name>
         <value>25</value>
     </property>
+    <!-- HBase 文件流清除的时间间隔 -->
     <property>
         <name>hbase.fileStream.cleaner.ttl.thread.wakefrequency</name>
         <value>86400</value>
     </property>
+    <!-- HBase Master 的 Keytab 文件路径 -->
     <property>
         <name>hbase.master.keytab.file</name>
         <value>
             /opt/huawei/Bigdata/FusionInsight_HD_V100R002C80SPC200/install/FusionInsight-HBase-1.3.1/keytabs/HBase/hbase.keytab
         </value>
     </property>
+    <!-- HBase 服务器名称 -->
     <property>
         <name>hbase.server</name>
         <value>HBase</value>
     </property>
+    <!-- HBase DFS 客户端读取 Shortcut 的缓冲区大小 -->
     <property>
         <name>hbase.dfs.client.read.shortcircuit.buffer.size</name>
         <value>131072</value>
     </property>
+    <!-- Master 使用的 RMI 注册表 IP -->
     <property>
         <name>master.rmi.registry.ip</name>
         <value>127.0.0.1</value>
     </property>
+    <!-- HBase 文件流清除的临时线程唤醒频率 -->
     <property>
         <name>hbase.fileStream.cleaner.tmp.thread.wakefrequency</name>
         <value>3600</value>
     </property>
+    <!-- HBase ZooKeeper 的主机列表 -->
     <property>
         <name>hbase.zookeeper.quorum</name>
         <value>xlhd-b3004-cn05,xlhd-b3003-cn04,xlhd-b3002-cn03,xlhd-b3001-cn02,xlhd-b2901-cn01</value>
     </property>
+    <!-- HBase 客户端写入缓冲区大小 -->
     <property>
         <name>hbase.client.write.buffer</name>
         <value>2097152</value>
     </property>
+    <!-- HBase 大对象的阈值 -->
     <property>
         <name>hbase.large.object.threshold.max</name>
         <value>10485760</value>
     </property>
+    <!-- HBase 元数据迁移是否转换为 PB 格式 -->
     <property>
         <name>hbase.MetaMigrationConvertingToPB</name>
         <value>false</value>
     </property>
+    <!-- HBase 文件流的根目录 -->
     <property>
         <name>hbase.filestream.rootdir</name>
         <value>/hbaseFileStream</value>
     </property>
+    <!-- HBase RPC 通信的保护方式 -->
     <property>
         <name>hbase.rpc.protection</name>
         <value>authentication</value>
     </property>
+    <!-- HBase 加密密钥提供器 URI -->
     <property>
         <name>hbase.crypto.keyprovider.parameters.uri</name>
         <value></value>
     </property>
+    <!-- HBase 的根目录 -->
     <property>
         <name>hbase.rootdir</name>
         <value>hdfs://hacluster/hbase</value>
     </property>
+    <!-- 是否启用 HBase 协处理器 -->
     <property>
         <name>hbase.coprocessor.enabled</name>
         <value>true</value>
     </property>
+    <!-- HFile 格式版本 -->
     <property>
         <name>hfile.format.version</name>
         <value>3</value>
     </property>
+    <!-- HBase RegionServer 的 Kerberos 主体 -->
     <property>
         <name>hbase.regionserver.kerberos.principal</name>
         <value>hbase/hadoop.hadoop.com@HADOOP.COM</value>
     </property>
+    <!-- HBase RegionServer HFile 清除线程大队列的大小 -->
     <property>
         <name>hbase.regionserver.hfilecleaner.large.queue.size</name>
         <value>10240</value>
     </property>
+    <!-- 是否启用用户自定义的 HBase 协处理器 -->
     <property>
         <name>hbase.coprocessor.user.enabled</name>
         <value>true</value>
     </property>
+    <!-- HBase 安全认证方式 -->
     <property>
         <name>hbase.security.authentication</name>
         <value>kerberos</value>
     </property>
+    <!-- HBase Master 清理程序的间隔时间 -->
     <property>
         <name>hbase.master.cleaner.interval</name>
         <value>60000</value>
     </property>
+    <!-- HBase SplitLogManager 的超时时间 -->
     <property>
         <name>hbase.splitlog.manager.timeout</name>
         <value>600000</value>
     </property>
+    <!-- 是否启用 HBase 会话控制 -->
     <property>
         <name>hbase.sessioncontrol.enable</name>
         <value>false</value>
     </property>
+    <!-- 是否启用 HBase 快照功能 -->
     <property>
         <name>hbase.snapshot.enabled</name>
         <value>true</value>
     </property>
+    <!-- HBase 禁用表时的最大重试次数 -->
     <property>
         <name>hbase.disable.table.max.retry.attempts</name>
         <value>24</value>
     </property>
+    <!-- ZooKeeper 会话超时时间 -->
     <property>
         <name>zookeeper.session.timeout</name>
         <value>90000</value>
@@ -202,82 +248,102 @@
         <name>dfs.domain.socket.path</name>
         <value>/var/run/FusionInsight-HDFS/dn_socket</value>
     </property>
+    <!-- HBase中Phoenix协处理器的最大服务器缓存生存时间，单位为毫秒 -->
     <property>
         <name>phoenix.coprocessor.maxServerCacheTimeToLiveMs</name>
         <value>1800000</value>
     </property>
+    <!-- JMX包含的主机名，使用正则表达式匹配所有主机 -->
     <property>
         <name>jmx.include.hosts</name>
         <value>.*</value>
     </property>
+    <!-- HBase主节点的UI只读模式开关，设置为true表示只读，false表示可写 -->
     <property>
         <name>hbase.master.ui.readonly</name>
         <value>true</value>
     </property>
+    <!-- HBase主节点的负载均衡器类 -->
     <property>
         <name>hbase.master.loadbalancer.class</name>
         <value>org.apache.hadoop.hbase.master.balancer.StochasticLoadBalancer</value>
     </property>
+    <!-- HBase配额刷新周期，单位为毫秒 -->
     <property>
         <name>hbase.quota.refresh.period</name>
         <value>300000</value>
     </property>
+    <!-- HBase认证密钥更新间隔，单位为毫秒 -->
     <property>
         <name>hbase.auth.key.update.interval</name>
         <value>86400000</value>
     </property>
+    <!-- HBase主节点的Kerberos主体 -->
     <property>
         <name>hbase.master.kerberos.principal</name>
         <value>hbase/hadoop.hadoop.com@HADOOP.COM</value>
     </property>
+    <!-- HBase协处理器异常时是否中止 -->
     <property>
         <name>hbase.coprocessor.abortonerror</name>
         <value>true</value>
     </property>
+    <!-- HBase负载均衡器随机模式的最大运行时间 -->
     <property>
         <name>hbase.master.balancer.stochastic.maxRunningTime</name>
         <value>300000</value>
     </property>
+    <!-- HBase文件清理器小型线程数 -->
     <property>
         <name>hbase.regionserver.hfilecleaner.small.thread.count</name>
         <value>1</value>
     </property>
+    <!-- 是否使用HBase的二级索引 -->
     <property>
         <name>hbase.use.secondary.index</name>
         <value>true</value>
     </property>
+    <!-- HBase加密使用的主密钥名称 -->
     <property>
         <name>hbase.crypto.master.key.name</name>
         <value>omm</value>
     </property>
+    <!-- HBase IPC服务器调用队列处理因子 -->
     <property>
         <name>hbase.ipc.server.callqueue.handler.factor</name>
         <value>0.1</value>
     </property>
+    <!-- HBase主节点等待Region服务器超时时间，单位为毫秒 -->
     <property>
         <name>hbase.master.wait.on.regionservers.timeout</name>
         <value>30000</value>
     </property>
+    <!-- HBase文件流清理器过期时间，单位为秒 -->
     <property>
         <name>hbase.fileStream.cleaner.ttl.expire.time</name>
         <value>604800</value>
     </property>
+    <!-- 是否启用HBase的SSL加密 -->
     <property>
         <name>hbase.ssl.enabled</name>
         <value>true</value>
     </property>
+    <!-- HBase超级用户列表 -->
     <property>
         <name>hbase.superuser</name>
         <value>hbase,@supergroup,@zkclient,@System_administrator_186</value>
     </property>
+    <!-- HBase主节点日志清理器的生存时间，单位为毫秒 -->
     <property>
         <name>hbase.master.logcleaner.ttl</name>
         <value>600000</value>
     </property>
+    <!-- HBase主节点命名空间初始化超时时间，单位为毫秒 -->
     <property>
         <name>hbase.master.namespace.init.timeout</name>
         <value>1200000</value>
     </property>
+    <!-- HBase会话控制在一个时间段内的最大连接数 -->
     <property>
         <name>hbase.sessioncontrol.maxconnectionsinperiod</name>
         <value>65535</value>
@@ -287,116 +353,144 @@
         <name>hbase.regionserver.handler.count</name>
         <value>50</value>
     </property>
+    <!-- HBase主节点的IPC地址 -->
     <property>
         <name>hbase.master.ipc.address</name>
         <value>xlhd-b3001-cn02</value>
     </property>
+    <!-- 控制每个用户的最大连接数 -->
     <property>
         <name>hbase.sessioncontrol.maxconnections</name>
         <value>65535</value>
     </property>
+    <!-- 密钥提供程序的加密参数 -->
     <property>
         <name>hbase.crypto.keyprovider.parameters</name>
         <value>?encryptedtext=</value>
     </property>
+    <!-- 短路读取流缓存的过期时间（毫秒） -->
     <property>
         <name>dfs.client.read.shortcircuit.streams.cache.expiry.ms</name>
         <value>100000</value>
     </property>
+    <!-- 加密密码提供程序 -->
     <property>
         <name>hbase.crypto.cipherprovider</name>
         <value>com.huawei.hadoop.hbase.io.crypto.HuaweiCipherProvider</value>
     </property>
+    <!-- Phoenix默认列编码字节属性 -->
     <property>
         <name>phoenix.default.column.encoded.bytes.attrib</name>
         <value>0</value>
     </property>
+    <!-- 区域转换阈值 -->
     <property>
         <name>hbase.region.transition.threshold</name>
         <value>300000</value>
     </property>
+    <!-- 批量加载临时目录 -->
     <property>
         <name>hbase.bulkload.staging.dir</name>
         <value>/user/${user.name}/hbase-staging</value>
     </property>
+    <!-- 控制每个用户的最大连接数 -->
     <property>
         <name>hbase.sessioncontrol.maxconnectionsperuser</name>
         <value>65535</value>
     </property>
+    <!-- WAL（Write-Ahead Log）加密算法 -->
     <property>
         <name>hbase.crypto.wal.algorithm</name>
         <value>AES</value>
     </property>
+    <!-- 协处理器的主节点类 -->
     <property>
         <name>hbase.coprocessor.master.classes</name>
         <value>
             org.apache.hadoop.hbase.hindex.server.master.HIndexMasterCoprocessor,com.huawei.hadoop.hbase.backup.services.RecoveryCoprocessor,org.apache.hadoop.hbase.security.access.AccessController,org.apache.hadoop.hbase.security.access.ReadOnlyClusterEnabler,org.apache.hadoop.hbase.coprocessor.RollingUpgradeMasterObserver
         </value>
     </property>
+    <!-- 备份输出目录 -->
     <property>
         <name>hbase.huawei.backup.output</name>
         <value>/user/hbase/hbaseBackup/hbase</value>
     </property>
+    <!-- 密钥算法 -->
     <property>
         <name>hbase.crypto.key.algorithm</name>
         <value>AES</value>
     </property>
+    <!-- 区域双分配自动恢复周期 -->
     <property>
         <name>hbase.region.double.assignment.auto.recovery.period</name>
         <value>300000</value>
     </property>
+    <!-- 默认HBase超级用户 -->
     <property>
         <name>default.hbase.superuser</name>
         <value>hbase,@supergroup,@zkclient,@System_administrator_186</value>
     </property>
+    <!-- HFile清理线程限流阈值 -->
     <property>
         <name>hbase.regionserver.thread.hfilecleaner.throttle</name>
         <value>67108864</value>
     </property>
+    <!-- 加密文本的密钥提供程序参数 -->
     <property>
         <name>hbase.crypto.keyprovider.parameters.encryptedtext</name>
         <value></value>
     </property>
+    <!-- 配置加密类 -->
     <property>
         <name>hbase.config.crypt.class</name>
         <value>com.huawei.hadoop.datasight.security.FMHbaseCryptAdapter</value>
     </property>
+    <!-- 数据存储根目录 -->
     <property>
         <name>hbase.data.rootdir</name>
         <value>/hbase</value>
     </property>
+    <!-- 客户端重试次数 -->
     <property>
         <name>hbase.client.retries.number</name>
         <value>35</value>
     </property>
+    <!-- 是否启用配额限制 -->
     <property>
         <name>hbase.quota.enabled</name>
         <value>false</value>
     </property>
+    <!-- 主节点初始化监控超时时间（毫秒） -->
     <property>
         <name>hbase.master.initializationmonitor.timeout</name>
         <value>1200000</value>
     </property>
+    <!-- 复制集群ID -->
     <property>
         <name>hbase.replication.cluster.id</name>
         <value></value>
     </property>
+    <!-- 服务器别名 -->
     <property>
         <name>hbase.server.alias</name>
         <value>HBase</value>
     </property>
+    <!-- HFile小型队列大小 -->
     <property>
         <name>hbase.regionserver.hfilecleaner.small.queue.size</name>
         <value>10240</value>
     </property>
+    <!-- 快照主节点超时时间（毫秒） -->
     <property>
         <name>hbase.snapshot.master.timeout.millis</name>
         <value>300000</value>
     </property>
+    <!-- 限制期限 -->
     <property>
         <name>hbase.sessioncontrol.limitperiod</name>
         <value>60</value>
     </property>
+    <!-- 恢复输出目录 -->
     <property>
         <name>hbase.huawei.restore.output</name>
         <value>/user/hbase/hbaseRestore</value>
@@ -406,100 +500,124 @@
         <name>dfs.client.read.shortcircuit.streams.cache.size</name>
         <value>512</value>
     </property>
+    <!-- 区域自动恢复周期 -->
     <property>
         <name>hbase.region.assignment.auto.recovery.period</name>
         <value>1800000</value>
     </property>
+    <!-- ZooKeeper znode父目录 -->
     <property>
         <name>zookeeper.znode.parent</name>
         <value>/hbase</value>
     </property>
+    <!-- 主节点信息端口 -->
     <property>
         <name>hbase.master.info.port</name>
         <value>21301</value>
     </property>
+    <!-- 主节点初始化监控超时时是否停止 -->
     <property>
         <name>hbase.master.initializationmonitor.haltontimeout</name>
         <value>false</value>
     </property>
+    <!-- 是否分布式部署 -->
     <property>
         <name>hbase.cluster.distributed</name>
         <value>true</value>
     </property>
+    <!-- RMI连接器端口 -->
     <property>
         <name>master.rmi.connector.port</name>
         <value>21306</value>
     </property>
+    <!-- 用户区域协处理器类 -->
     <property>
         <name>hbase.coprocessor.user.region.classes</name>
         <value></value>
     </property>
+    <!-- 临时目录 -->
     <property>
         <name>hbase.fs.tmp.dir</name>
         <value>/tmp</value>
     </property>
+    <!-- 客户端RPC编解码器 -->
     <property>
         <name>hbase.client.rpc.codec</name>
         <value>org.apache.hadoop.hbase.codec.KeyValueCodecWithTags</value>
     </property>
+    <!-- 是否启用HBase安全授权 -->
     <property>
         <name>hbase.security.authorization</name>
         <value>true</value>
     </property>
+    <!-- 扫描请求在CallQueue中所占的比例 -->
     <property>
         <name>hbase.ipc.server.callqueue.scan.ratio</name>
         <value>0</value>
     </property>
+    <!-- 是否启用主节点协处理器的JMX -->
     <property>
         <name>hbase.coprocessor.master.enable.jmx</name>
         <value>true</value>
     </property>
+    <!-- 主节点操作表线程数 -->
     <property>
         <name>hbase.master.executor.tableoperation.threads</name>
         <value>1</value>
     </property>
+    <!-- HLog的写入器实现类 -->
     <property>
         <name>hbase.regionserver.hlog.writer.impl</name>
         <value>org.apache.hadoop.hbase.regionserver.wal.SecureProtobufLogWriter</value>
     </property>
+    <!-- RMI注册表主机 -->
     <property>
         <name>master.rmi.registry.host</name>
         <value>127.0.0.1</value>
     </property>
+    <!-- 文件流清理器临时过期时间 -->
     <property>
         <name>hbase.fileStream.cleaner.tmp.expire.time</name>
         <value>86400</value>
     </property>
+    <!-- ZooKeeper备份父目录 -->
     <property>
         <name>zookeeper.huawei.backup.parent</name>
         <value>hwbackup/hbase</value>
     </property>
+    <!-- 密钥提供程序 -->
     <property>
         <name>hbase.crypto.keyprovider</name>
         <value>org.apache.hadoop.hbase.io.crypto.KeyStoreKeyProvider</value>
     </property>
+    <!-- 主节点DNS名称服务器 -->
     <property>
         <name>hbase.master.dns.nameserver</name>
         <value>default</value>
     </property>
+    <!-- 等待空RIT的批量分配任务时间（毫秒） -->
     <property>
         <name>hbase.bulk.assignment.waiton.empty.rit</name>
         <value>300000</value>
     </property>
+    <!-- HTTP过滤器初始化器 -->
     <property>
         <name>hbase.http.filter.initializers</name>
         <value>
             com.huawei.hadoop.hbase.adapter.sso.FlowCtrlFilter,com.huawei.hadoop.hbase.adapter.sso.XSSFilterInitializer,com.huawei.hadoop.hbase.adapter.sso.InternalSpnegoFilter,com.huawei.hadoop.hbase.adapter.sso.CASClientFilter,com.huawei.hadoop.hbase.adapter.sso.LogoutFilterInitializer
         </value>
     </property>
+    <!-- 客户端暂停时间（毫秒） -->
     <property>
         <name>hbase.client.pause</name>
         <value>100</value>
     </property>
+    <!-- 主节点信息绑定地址 -->
     <property>
         <name>hbase.master.info.bindAddress</name>
         <value>xlhd-b3001-cn02</value>
     </property>
+    <!-- RMI注册表端口 -->
     <property>
         <name>master.rmi.registry.port</name>
         <value>21306</value>
@@ -509,82 +627,102 @@
         <name>dfs.client.read.shortcircuit</name>
         <value>true</value>
     </property>
+    <!-- 是否预加载表描述符 -->
     <property>
         <name>hbase.master.preload.tabledescriptors</name>
         <value>false</value>
     </property>
+    <!-- phoenix 协处理器 元数据缓存的最大存活时间（毫秒） -->
     <property>
         <name>phoenix.coprocessor.maxMetaDataCacheTimeToLiveMs</name>
         <value>1800000</value>
     </property>
+    <!-- 读请求在CallQueue中所占的比例 -->
     <property>
         <name>hbase.ipc.server.callqueue.read.ratio</name>
         <value>0</value>
     </property>
+    <!-- 主节点过程线程数 -->
     <property>
         <name>hbase.master.procedure.threads</name>
         <value>20</value>
     </property>
+    <!-- HFile大型清理线程数 -->
     <property>
         <name>hbase.regionserver.hfilecleaner.large.thread.count</name>
         <value>1</value>
     </property>
+    <!-- 批量分配线程池大小 -->
     <property>
         <name>hbase.bulk.assignment.threadpool.size</name>
         <value>20</value>
     </property>
+    <!-- 主节点DNS接口 -->
     <property>
         <name>hbase.master.dns.interface</name>
         <value>default</value>
     </property>
+    <!-- 等待启动的区域服务器最小数目 -->
     <property>
         <name>hbase.master.wait.on.regionservers.mintostart</name>
         <value>1</value>
     </property>
+    <!-- 是否启用区域双分配自动恢复 -->
     <property>
         <name>hbase.region.double.assignment.auto.recovery.enabled</name>
         <value>true</value>
     </property>
+    <!-- 主节点ACL初始化超时时间（毫秒） -->
     <property>
         <name>hbase.master.acl.init.timeout</name>
         <value>300000</value>
     </property>
+    <!-- 客户端KeyValue的最大大小 -->
     <property>
         <name>hbase.client.keyvalue.maxsize</name>
         <value>10485760</value>
     </property>
+    <!-- 是否进行HBase权限检查 -->
     <property>
         <name>hbase.security.exec.permission.checks</name>
         <value>true</value>
     </property>
+    <!-- 客户端Scanner的缓存大小 -->
     <property>
         <name>hbase.client.scanner.caching</name>
         <value>100</value>
     </property>
+    <!-- HLog的读取器实现类 -->
     <property>
         <name>hbase.regionserver.hlog.reader.impl</name>
         <value>org.apache.hadoop.hbase.regionserver.wal.SecureProtobufLogReader</value>
     </property>
+    <!-- RPC超时时间（毫秒） -->
     <property>
         <name>hbase.rpc.timeout</name>
         <value>60000000</value>
     </property>
+    <!-- ZooKeeper客户端端口 -->
     <property>
         <name>hbase.zookeeper.property.clientPort</name>
         <value>24002</value>
     </property>
+    <!-- 是否启用WAL（Write-Ahead Log）加密 -->
     <property>
         <name>hbase.regionserver.wal.encryption</name>
         <value>false</value>
     </property>
+    <!-- 是否启用复制批量加载 -->
     <property>
         <name>hbase.replication.bulkload.enabled</name>
         <value>false</value>
     </property>
+    <!-- 是否启用区域自动恢复 -->
     <property>
         <name>hbase.region.assignment.auto.recovery.enabled</name>
         <value>true</value>
     </property>
+    <!-- 是否启用文件流清理器TTL -->
     <property>
         <name>hbase.fileStream.cleaner.ttl.enable</name>
         <value>false</value>
