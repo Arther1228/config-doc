@@ -1,0 +1,165 @@
+metrics.latency.interval: 10 s
+metrics.reporters: prom
+metrics.reporter.prom.class: org.apache.flink.metrics.prometheus.PrometheusReporter
+metrics.reporter.prom.port: 9249-9257
+akka.ask.timeout: 20 s
+akka.framesize: 10485760b
+akka.log.lifecycle.events: false
+akka.lookup.timeout: 20 s
+akka.ssl.enabled: true
+akka.startup-timeout: 10 s
+akka.tcp.timeout: 40 s
+akka.throughput: 15
+akka.watch.heartbeat.interval: 20 s
+akka.watch.heartbeat.pause: 120 s
+akka.watch.threshold: 12
+blob.fetch.backlog: 1000
+blob.fetch.num-concurrent: 50
+blob.fetch.retries: 50
+blob.server.port: 32456-32520
+blob.service.ssl.enabled: true
+client.rpc.port: 32651-32720
+compiler.delimited-informat.max-line-samples: 10
+compiler.delimited-informat.max-sample-len: 2097152
+compiler.delimited-informat.min-line-samples: 2
+env.java.opts.jobmanager: -Djava.security.krb5.conf=/opt/huawei/Bigdata/FusionInsight_BASE_V100R002C80SPC200/1_5_KerberosClient/etc/kdc.conf
+env.java.opts.taskmanager: -Djava.security.krb5.conf=/opt/huawei/Bigdata/FusionInsight_BASE_V100R002C80SPC200/1_5_KerberosClient/etc/kdc.conf
+env.java.opts: -Xloggc:<LOG_DIR>/gc.log -XX:+PrintGCDetails -XX:-OmitStackTraceInFastThrow -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=20 -XX:GCLogFileSize=20M -Djdk.tls.ephemeralDHKeySize=2048 -XX:NewRatio=3 -XX:+UseG1GC
+
+#用户安装Flink集群时，需要选择"安全模式"或"普通模式"。
+#当选择"安全模式"，配置项"flink.security.enable"被自动配置为"true"。
+#当选择"普通模式"，配置项"flink.security.enable"被自动配置为"false"。
+#对于已经安装好的Flink集群，用户可以通过查看配置项"flink.security.enable"的值来区分当前安装的是安全模式还是普通模式。
+flink.security.enable: true
+fs.output.always-create-directory: false
+fs.overwrite-files: false
+high-availability.job.delay: 10 s
+high-availability.storageDir: hdfs:///flink/recovery
+high-availability.zookeeper.client.acl: creator
+high-availability.zookeeper.client.connection-timeout: 15000
+high-availability.zookeeper.client.max-retry-attempts: 3
+high-availability.zookeeper.client.retry-wait: 5000
+high-availability.zookeeper.client.session-timeout: 60000
+high-availability.zookeeper.path.root: /captain
+high-availability.zookeeper.quorum: 34.8.8.8:24002,34.8.8.7:24002,34.8.8.6:24002,34.8.8.5:24002,34.8.8.4:24002
+high-availability: zookeeper
+jobmanager.heap.mb: 512
+jobmanager.web.403-redirect-url: https://34.8.9.153:28443/web/pages/error/403.html
+jobmanager.web.404-redirect-url: https://34.8.9.153:28443/web/pages/error/404.html
+jobmanager.web.415-redirect-url: https://34.8.9.153:28443/web/pages/error/415.html
+jobmanager.web.500-redirect-url: https://34.8.9.153:28443/web/pages/error/500.html
+jobmanager.web.access-control-allow-origin: 34.8.8.5,34.8.8.6
+#web操作日志使能开关，日志会存放在webaccess.log中。
+jobmanager.web.accesslog.enable: true
+#web访问白名单，ip以逗号隔开。只有在白名单中的ip才能访问web。
+jobmanager.web.allow-access-address: 34.8.8.5,34.8.8.6
+#未访问反压记录清理周期。单位：ms。
+jobmanager.web.backpressure.cleanup-interval: 600000
+#计算反压的采样间隔。单位：ms
+jobmanager.web.backpressure.delay-between-samples: 50
+#计算反压使用的堆栈跟踪记录数。
+jobmanager.web.backpressure.num-samples: 100
+#反压记录刷新周期。单位：ms。
+jobmanager.web.backpressure.refresh-interval: 60000
+#web页面是否支持缓存。
+jobmanager.web.cache-directive: no-store
+#禁用checkpoint统计。
+jobmanager.web.checkpoints.disable: false
+#Checkpoint统计记录数。
+jobmanager.web.checkpoints.history: 10
+#web页面缓存过期时长。单位：ms。
+jobmanager.web.expires-time: 0
+#显示"flink.security.enable"最近的job数目。
+jobmanager.web.history: 5
+jobmanager.web.logout-timer: 600000
+#web端口，支持范围：32261-32325。
+jobmanager.web.port: 32261-32325
+jobmanager.web.pragma-value: no-cache
+jobmanager.web.refresh-interval: 3000
+#web是否使用SSL加密传输，仅在全局开关security.ssl开启时有。
+jobmanager.web.ssl.enabled: false
+#http安全头X-Frame-Options的值，可选范围为：SAMEORIGIN、DENY、ALLOW-FROM uri。
+jobmanager.web.x-frame-options: DENY
+library-cache-manager.cleanup.interval: 3600
+nettyconnector.message.delimiter: $_
+nettyconnector.registerserver.topic.storage: /flink/nettyconnector
+nettyconnector.sinkserver.port.range: 28444-28943
+nettyconnector.sinkserver.subnet: 34.8.8.0/24
+nettyconnector.ssl.enabled: false
+parallelism.default: 8
+query.client.network-threads: 0
+query.proxy.network-threads: 0
+query.proxy.ports: 32541-32560
+query.proxy.query-threads: 0
+query.server.network-threads: 0
+query.server.ports: 32521-32540
+query.server.query-threads: 0
+restart-strategy.failure-rate.delay: 10 s
+restart-strategy.failure-rate.failure-rate-interval: 60 s
+restart-strategy.failure-rate.max-failures-per-interval: 1
+restart-strategy.fixed-delay.attempts: 3
+restart-strategy.fixed-delay.delay: 10 s
+restart-strategy: none
+security.cookie: 18ed33d0-7363-459e-9ac3-ecdb9567442d6ed032e8-dc80-475a-95dc-34e031be6081
+security.enable: true
+security.kerberos.login.contexts: Client,KafkaClient
+security.kerberos.login.keytab: /home/captain/keytab/user.keytab
+security.kerberos.login.principal: captain
+security.kerberos.login.use-ticket-cache: false
+security.ssl.algorithms: TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_DHE_RSA_WITH_AES_128_CBC_SHA256,TLS_DHE_DSS_WITH_AES_128_CBC_SHA256
+security.ssl.enabled: false
+security.ssl.key-password: 123456
+security.ssl.keystore-password: 123456
+security.ssl.keystore: conf/flink.keystore
+security.ssl.protocol: TLSv1.2
+security.ssl.truststore-password: 123456
+security.ssl.truststore: conf/flink.truststore
+security.ssl.verify-hostname: false
+state.backend.fs.checkpointdir: hdfs:///flink/checkpoints
+state.savepoints.dir: hdfs:///flink/savepoint
+task.cancellation.interval: 60000
+# add
+task.cancellation.timers.timeout: 30000
+taskmanager.data.port: 32391-32455
+taskmanager.data.ssl.enabled: false
+taskmanager.debug.memory.logIntervalMs: 0
+taskmanager.debug.memory.startLogThread: false
+taskmanager.heap.mb: 512
+taskmanager.initial-registration-pause: 500 ms
+taskmanager.max-registration-pause: 30 s
+taskmanager.maxRegistrationDuration: Inf
+taskmanager.memory.fraction: 0.7
+taskmanager.memory.off-heap: false
+taskmanager.memory.preallocate: false
+taskmanager.memory.segment-size: 32768
+taskmanager.memory.size: -1
+taskmanager.network.netty.client.connectTimeoutSec: 120
+taskmanager.network.netty.client.numThreads: 4
+taskmanager.network.netty.num-arenas: 1
+taskmanager.network.netty.sendReceiveBufferSize: 4096
+# 修改4为16.减少taskmanager失连
+taskmanager.network.netty.server.numThreads: 16
+taskmanager.network.netty.transport: nio
+taskmanager.network.numberOfBuffers: 2048
+
+# 网络缓存占TM内存的默认比例，默认0.1
+taskmanager.network.memory.fraction: 0.15
+# 网络缓存的最小值和最大值 ，默认64MB和1GB
+taskmanager.network.memory.min: 128mb
+taskmanager.network.memory.max: 1gb
+
+taskmanager.numberOfTaskSlots: 1
+taskmanager.refused-registration-pause: 10 s
+taskmanager.rpc.port: 32326-32390
+taskmanager.runtime.hashjoin-bloom-filters: false
+taskmanager.runtime.max-fan: 128
+taskmanager.runtime.sort-spilling-threshold: 0.8
+yarn.application-attempts: 2
+yarn.application-master.port: 32586-32650
+yarn.containers.vcores: 1
+yarn.heap-cutoff-min: 384
+yarn.heap-cutoff-ratio: 0.25
+yarn.heartbeat-delay: 5
+yarn.maximum-failed-containers: 5
+zookeeper.sasl.disable: false
+zookeeper.sasl.service-name: zookeeper

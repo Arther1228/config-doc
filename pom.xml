@@ -17,6 +17,8 @@
         <module>kafka</module>
         <module>zookeeper</module>
         <module>http</module>
+        <module>spark</module>
+        <module>yarn</module>
     </modules>
 
 
