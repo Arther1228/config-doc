@@ -19,6 +19,7 @@
         <module>http</module>
         <module>spark</module>
         <module>yarn</module>
+        <module>maven-export</module>
     </modules>
 
 
